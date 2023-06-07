@@ -1,0 +1,12 @@
+from pytube import YouTube
+
+def download_video(url, path):
+    yt = YouTube(url)
+    yt_stream = yt.streams.get_highest_resolution()
+    if yt_stream is not None:
+        yt_stream.download(path)
+
+url = "Url_of_your_youtube_video" 
+path = "path" 
+
+download_video(url, path)
